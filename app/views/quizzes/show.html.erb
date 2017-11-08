@@ -1,0 +1,29 @@
+<h1><%= @quiz.name %></h1>
+
+<hr>
+
+<% if current_user.admin? %>
+
+<%= link_to "Edit", edit_quiz_path(@quiz), :class => 'btn btn-default' %>
+
+<%= link_to "Delete", quiz_path(@quiz),
+					method: :delete,
+					data: {confirm: 'Are you sure?'},
+						
+					:class => 'btn btn-danger' %>
+
+<hr>
+<br/>
+<%= render 'questions/questions' %>
+<hr>
+<br/>
+<%= render 'questions/form' %>
+<hr>
+
+
+<% else %>
+
+
+
+
+<% end %>

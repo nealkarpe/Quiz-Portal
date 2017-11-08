@@ -1,0 +1,23 @@
+<% if current_user %>
+	<% if current_user.admin? %>
+		<h2> Admin home page</h2>
+	<% else %>
+		<h2> User home page</h2>
+	<% end %>
+
+	<% @quizzes.each do |quiz| %>
+		<div class="well">
+			<h3><%= quiz.name %></h3>
+			<% if current_user.admin? %>
+				<%= link_to "Edit Quiz", quiz_path(quiz), :class => 'btn btn-default' %>
+
+			<% else %>
+				<%= link_to "Start quiz", new_quiz_attempt_path(quiz,current_user), :class => 'btn btn-default' %>
+				<%= link_to "Continue", edit_quiz_attempt_path(quiz,current_user), :class => 'btn btn-success' %>
+
+			<% end %>
+		</div>
+	<% end %>
+<% else %>
+	<h1> QuizApp - The World's Best Quizzing Application!</h1>
+<% end %>

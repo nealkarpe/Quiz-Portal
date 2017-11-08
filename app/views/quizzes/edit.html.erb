@@ -1,0 +1,20 @@
+<h1>Edit quiz</h1>
+
+<%= form_for :quiz, url: quiz_path(@quiz), method: :patch do |f| %>
+
+	<% if @quiz.errors.any? %>
+		<% @quiz.errors.full_messages.each do |msg| %>
+			<div class = "alert alert-danger"><%= msg %></div>
+		<% end %>	
+	<% end %>	
+
+
+	<p>
+		<%= f.label :name %><br/>
+		<%= f.text_field(:name, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+<% end %>

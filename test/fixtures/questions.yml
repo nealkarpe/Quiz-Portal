@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  optionA: MyString
+  flagA: false
+  optionB: MyString
+  flagB: false
+  optionC: MyString
+  flagC: false
+  optionD: MyString
+  flagD: false
+  quiz: one
+
+two:
+  optionA: MyString
+  flagA: false
+  optionB: MyString
+  flagB: false
+  optionC: MyString
+  flagC: false
+  optionD: MyString
+  flagD: false
+  quiz: two

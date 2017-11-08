@@ -1,0 +1,84 @@
+<h2>Add Question</h2>
+<div class="col-xs-3"></div>
+<div class="well col-xs-6">
+<%= form_for([@quiz, @quiz.questions.build]) do |f| %>
+
+	<h4>Question</h4>
+	<div class="row">
+	<div class="col-xs-3"></div>
+	<div class="col-xs-6">
+		<%= f.label :ques_name, "Question Title" %><br/>
+		<%= f.text_field(:ques_name, {:class => 'form-control'}) %>
+	</div>
+	<div class="col-xs-3"></div>
+	</div>
+	
+
+	<div class="row">
+	<div class="col-xs-4"></div>
+	<div class="col-xs-4">
+		<%= f.label :optionA, "Option A" %><br/>
+		<%= f.text_field(:optionA, {:class => 'form-control'}) %>
+	</div>
+	<div class="col-xs-4"></div>
+	</div>
+
+	<div class="row">
+	<div class="col-xs-4"></div>
+	<div class="col-xs-4">
+		<%= f.label :optionB, "Option B" %><br/>
+		<%= f.text_field(:optionB, {:class => 'form-control'}) %>
+	</div>
+	<div class="col-xs-4"></div>
+	</div>
+
+	<div class="row">
+	<div class="col-xs-4"></div>
+	<div class="col-xs-4">
+		<%= f.label :optionC, "Option C" %><br/>
+		<%= f.text_field(:optionC, {:class => 'form-control'}) %>
+	</div>
+	<div class="col-xs-4"></div>
+	</div>
+	
+	<div class="row">
+	<div class="col-xs-4"></div>
+	<div class="col-xs-4">
+		<%= f.label :optionD, "Option D" %><br/>
+		<%= f.text_field(:optionD, {:class => 'form-control'}) %>
+	</div>
+	<div class="col-xs-4"></div>
+	</div>
+	
+
+	<br>
+	<h4>Correct Answer</h4>
+
+	<p>
+	    <%= f.label :flagA, "Option A", :value => "t"  %>
+	    <%= f.radio_button :flagA, true %>
+	</p>
+
+	<p>
+	    <%= f.label :flagB, "Option B", :value => "t"  %>
+	    <%= f.radio_button :flagB, true %>
+	</p>
+
+
+	<p>
+	    <%= f.label :flagC, "Option C", :value => "t"  %>
+	    <%= f.radio_button :flagC, true %>
+	</p>
+
+	<p>
+	    <%= f.label :flagD, "Option D", :value => "t"  %>
+	    <%= f.radio_button :flagD, true %>
+	</p>
+
+
+	<p>
+		<%= f.submit({:class => 'btn btn-default', :value => 'Add Question'}) %>
+	</p>
+<% end %>
+</div>
+<div class="col-xs-3"></div>

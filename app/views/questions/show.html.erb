@@ -1,0 +1,40 @@
+<h1><%= @question.qno %>. <%= @question.ques_name %> </h1>
+
+	<% quizid = @question.quiz_id %>
+	<% a = quizid.to_s %>
+
+	<% path = "/quizzes/" + a + "/questions/next" %>
+
+	<%= form_tag(path) do %>
+
+		<p>
+			a)
+		    <%= label_tag :ansA, @question.optionA, :value => "t"  %>
+		    <%= radio_button_tag :ansA, true %>
+		</p>
+
+		<p>
+			b)
+		    <%= label_tag :ansB, @question.optionB, :value => "t"  %>
+		    <%= radio_button_tag :ansB, true %>
+		</p>
+
+
+		<p>
+			c)
+		    <%= label_tag :ansC, @question.optionC, :value => "t"  %>
+		    <%= radio_button_tag :ansC, true %>
+		</p>
+
+		<p>
+			d)
+		    <%= label_tag :ansD,  @question.optionD, :value => "t"  %>
+		    <%= radio_button_tag :ansD, true %>
+		</p>
+
+
+		<p>
+			<input type="submit" value="Answer" class="btn btn-default" />
+		</p>
+
+	<% end %>
